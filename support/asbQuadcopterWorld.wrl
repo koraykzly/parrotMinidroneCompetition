@@ -1,0 +1,125 @@
+#VRML V2.0 utf8
+
+DEF AHMap Transform {
+  translation 50.67 -0.1 62.48
+  rotation 0 1 0 -1.57
+  children Group {
+    children Inline {
+      url "asbQuadcopterAHBase.wrl" 
+    }
+  }
+}
+DEF QuadBody Transform {
+  translation 50 0.001765 90
+  scaleOrientation 0 1 0 0
+  children [
+    DEF Airframe Transform {
+      scaleOrientation 1 0 0 0
+      rotation 0 1 0 0
+      children Inline {
+        url "asbQuadcopterBody.wrl" 
+      }
+    }
+    DEF Blade1 Transform {
+      translation 0.0425 0.015 -0.0425
+      children Inline {
+        url "asbQuadcopterBladeCW.wrl" 
+      }
+    }
+    DEF Blade3 Transform {
+      translation -0.0425 0.015 0.0425
+      children Inline {
+        url "asbQuadcopterBladeCW.wrl" 
+      }
+    }
+    DEF Blade2 Transform {
+      translation -0.0425 0.015 -0.0425
+      children Inline {
+        url "asbQuadcopterBladeCCW.wrl" 
+      }
+    }
+    DEF Blade4 Transform {
+      translation 0.0425 0.015 0.0425
+      children Inline {
+        url "asbQuadcopterBladeCCW.wrl" 
+      }
+    }
+    DEF Camera Viewpoint {
+      description "Quadcopter Camera"
+      position 0 -0.1 0
+      orientation 1 0 0 -1.57
+    }
+    DEF OnQuad Viewpoint {
+      description "Chase"
+      position -1 0.25 0
+      orientation 0 1 0 -1.57
+    }
+  ]
+}
+DEF IsoNoRotation Viewpoint {
+  description "Isometric - No Rotation"
+  position 50.9009 0.670747 90.99
+  orientation -0.46727 0.858698 0.210466 0.847752
+}
+DEF OnQuadNoRotation Viewpoint {
+  description "Chase - No Rotation"
+  position 47 1.00177 90
+  orientation 0 -1 -0 1.57
+}
+# Copyright 2017-2019 The MathWorks, Inc.
+DEF TrackSection1 Transform {
+  translation 51 -0.02 90
+  children Shape {
+    appearance Appearance {
+      material Material {
+        diffuseColor 1 0 0
+      }
+    }
+    geometry Box {
+      size 2 0.001 0.1
+    }
+  }
+}
+# Copyright 2017 The MathWorks, Inc.
+DEF TrackSection2 Transform {
+  translation 52 -0.02 90.95
+  children Shape {
+    appearance Appearance {
+      material Material {
+        diffuseColor 1 0 0
+      }
+    }
+    geometry Box {
+      size 0.1 0.001 2
+    }
+  }
+}
+# Copyright 2017 The MathWorks, Inc.
+DEF TrackSection3 Transform {
+  translation 52 -0.02 92.2
+  children Shape {
+    appearance Appearance {
+      material Material {
+        diffuseColor 1 0 0
+      }
+    }
+    geometry Cylinder {
+      radius 0.1
+      height 0.001
+    }
+  }
+}
+# Copyright 2017 The MathWorks, Inc.
+DEF BlueMarker Transform {
+  translation 50 -0.02 92
+  children Shape {
+    appearance Appearance {
+      material Material {
+        diffuseColor 0 0 1
+      }
+    }
+    geometry Box {
+      size 0.2 0.01 0.2
+    }
+  }
+}
